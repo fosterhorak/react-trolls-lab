@@ -47,3 +47,10 @@ export function getUser() {
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 
+
+
+// for testing validating token only (not necessary for app)
+export function checkToken() {
+    return usersAPI.checkToken()
+        .then(dateStr => new Date(dateStr));
+}
