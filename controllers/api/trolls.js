@@ -34,4 +34,4 @@ async function index(req, res) {
 // async function deleteOne(req, res) {
 //     const deletedTroll = await Troll.findByIdAndRemove(req.params.id);
 //     res.status(200).json(deletedTroll)
-}
+// }

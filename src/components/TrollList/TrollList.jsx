@@ -1,13 +1,13 @@
 //import './TrollList.css';
 import TrollListItem from '../../components/TrollListItem/TrollListItem';
 
-export default function TrollList({ props }) {
+export default function TrollList( props ) {
     return(
         <>
             <h1>Troll List </h1>
             <div className='TrollListPage-grid'>
                 {(!props.trolls.length) ? 
-                    <h3>No Trolls :() </h3>
+                    <h3>No Trolls!</h3>
                 : 
                     <>
                         {props.trolls.map(troll => 

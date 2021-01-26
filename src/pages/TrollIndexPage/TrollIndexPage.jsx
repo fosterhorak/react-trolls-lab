@@ -1,7 +1,7 @@
 import * as userService from '../../utilities/users-service';
 import TrollList from '../../components/TrollList/TrollList';
 
-export default function TrollIndexPage({ trolls, setTrolls}) {
+export default function TrollIndexPage( props ) {
     
     async function handleCheckToken() {
         const expDate = await userService.checkToken();
@@ -11,8 +11,8 @@ export default function TrollIndexPage({ trolls, setTrolls}) {
     return(
         <>
             <h1>Troll Index Page</h1>
-            <TrollList trolls={trolls} setTrolls={setTrolls}/>
-            <button onClick={handleCheckToken}>Check When My Login Expires</button>
+            <TrollList trolls={props.trolls}/>
+            {/*<button onClick={handleCheckToken}>Check When My Login Expires</button>*/}
         </>
     );
 }

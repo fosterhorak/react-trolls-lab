@@ -15,8 +15,13 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [trolls, setTrolls] = useState([
     {name: 'Albert', breed: 'Green Snoot', age:12, temperament:'hangry'},
+    {name: 'Alphonso', breed: 'Red Dinkle', age:6, temperament:'jolly'},
+    {name: 'Grouchy', breed: 'Gray Goostle', age:19, temperament:'crotchety'},
+    {name: 'Sunshine', breed: 'Golden Squeesh', age:10, temperament:'annoyingly happy'},
+    {name: 'Zachariah', breed: 'Blue Dart', age:13, temperament:'very chill'},
   ]);
 
+  //get trolls for index view
   useEffect(() => {
     async function getTrolls(){
       const trolls = await trollAPI.getAll();
@@ -39,10 +44,10 @@ export default function App() {
                 <OrderHistoryPage /> 
               </Route> */}
               <Route path="/trolls/new">
-                <NewTrollPage setTrolls={setTrolls} trolls={trolls}/> 
+                <NewTrollPage trolls={trolls} setTrolls={setTrolls} /> 
               </Route>
               <Route path="/trolls">
-                <TrollIndexPage setTrolls={setTrolls} trolls={trolls}/> 
+                <TrollIndexPage trolls={trolls} setTrolls={setTrolls} /> 
               </Route>
               <Redirect to="/trolls" />
             </Switch>
