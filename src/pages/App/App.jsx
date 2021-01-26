@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
@@ -30,6 +30,16 @@ export default function App() {
     getTrolls();
   }, [])
 
+  async function handleAddTroll(newTrollData) {
+    const newTroll = await trollAPI.create(newTrollData);
+    setTrolls([...trolls, newTroll]);
+  }
+
+  const history = useHistory();
+
+  useEffect(() => {
+    history.push("/")
+  }, [trolls, history])
 
   return (
     <main className="App">
@@ -43,13 +53,13 @@ export default function App() {
               <Route path="/orders">
                 <OrderHistoryPage /> 
               </Route> */}
-              <Route path="/trolls/new">
-                <NewTrollPage trolls={trolls} setTrolls={setTrolls} /> 
+              <Route path="/new">
+                <NewTrollPage trolls={trolls} setTrolls={setTrolls} handleAddTroll={handleAddTroll} /> 
               </Route>
-              <Route path="/trolls">
+              <Route path="/">
                 <TrollIndexPage trolls={trolls} setTrolls={setTrolls} /> 
               </Route>
-              <Redirect to="/trolls" />
+              <Redirect to="/" />
             </Switch>
           </>
         :

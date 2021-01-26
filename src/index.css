@@ -88,18 +88,26 @@ p.error-message {
   color: var(--navy);
   text-align: center;
 }
+.form-group {
+  display: flex;
+  justify-content: center;
+}
 
 form {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  width: 80%;
+  margin: auto;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: 1fr 1fr 2fr;
   gap: 1.25vmin;
   color: var(--text-light);
 }
 
 label {
   font-size: 2vmin;
+  color: var(--navy);
   display: flex;
-  align-items: center;
+  margin: auto;
 }
 
 input {
@@ -112,16 +120,22 @@ input {
   outline: none;
 }
 
+.form-btn {
+  width: 100%;
+  align-self: center;
+  grid-column-end: span col2-start;
+}
+
 input:focus {
   border-color: var(--navy);
 }
 
 button, a.button {
-  margin: 1vmin;
+  margin: 5px;
   padding: 1vmin;
   color: var(--white);
   background-color: var(--navy);
-  font-size: 2vmin;
+  font-size: small;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -129,7 +143,11 @@ button, a.button {
   border-radius: .5vmin;
   outline: none;
   cursor: pointer;
+  grid-column: span 2;
+  margin: 1vmin 0 0;
+  align-self: center;
 }
+
 
 button.btn-sm {
   font-size: 1.5vmin;
@@ -146,7 +164,36 @@ button:disabled, form:invalid button[type="submit"] {
   background-color: var(--sky-4);
 }
 
-button[type="submit"] {
-  grid-column: span 2;
-  margin: 1vmin 0 0;
+
+
+.TrollListPage-grid {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-gap: 20px;
+}
+
+.TrollListItem-action-panel {
+  display: flex;
+  padding: 3px;
+  align-content: center;
+}
+
+.TrollListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--sky-1);
+  border-radius: 4px;
+  width: 100%;
+}
+
+.panel {
+  justify-self: center;
+  padding: 5px;
+}
+
+.panel-footer {
+  justify-content: center;
 }

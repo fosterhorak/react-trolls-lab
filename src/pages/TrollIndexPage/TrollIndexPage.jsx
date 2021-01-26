@@ -1,12 +1,12 @@
-import * as userService from '../../utilities/users-service';
+// import * as userService from '../../utilities/users-service';
 import TrollList from '../../components/TrollList/TrollList';
 
 export default function TrollIndexPage( props ) {
     
-    async function handleCheckToken() {
-        const expDate = await userService.checkToken();
-        console.log(new Date(expDate));
-    }
+    // async function handleCheckToken() {
+    //     const expDate = await userService.checkToken();
+    //     console.log(new Date(expDate));
+    // }
     
     return(
         <>

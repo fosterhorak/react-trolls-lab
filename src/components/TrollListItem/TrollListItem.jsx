@@ -12,7 +12,7 @@ export default function TrollListItem({ troll }) {
             Temperament: {troll.temperament} 
         </h5>
       </div>
-      <div className='panel-footer PuppyListItem-action-panel'>
+      <div className='panel-footer TrollListItem-action-panel'>
           <button>detail</button>
           <button>edit</button>
           <button>delete</button>

@@ -5,15 +5,15 @@ export function getAll() {
     .then(res => res.json());
 }
 
-// export function create(troll) {
-//     return fetch(BASE_URL, {
-//         method: "POST",
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         body: JSON.stringify(troll)
-//     }).then(res => res.json());
-// }
+export function create(troll) {
+    return fetch(BASE_URL, {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(troll)
+    }).then(res => res.json());
+}
 
 // export function update(troll) {
 //     return fetch(`${BASE_URL}/${troll._id}`, {
