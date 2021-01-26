@@ -10,9 +10,13 @@ export default function NavBar({ user, setUser }) {
 
     return (
         <nav>
-            <NavLink exact activeStyle={{backgroundColor: 'yellow'}} to="/orders">Order History</NavLink>
+            {/*<NavLink exact activeStyle={{backgroundColor: 'yellow'}} to="/orders">Order History</NavLink>
             &nbsp; | &nbsp;
             <NavLink exact activeStyle={{backgroundColor: 'yellow'}}to="/orders/new">New Order</NavLink>    
+            &nbsp; | &nbsp; */}
+            <NavLink exact activeStyle={{backgroundColor: 'yellow'}}to="/trolls">Troll Index</NavLink>    
+            &nbsp; | &nbsp;
+            <NavLink exact activeStyle={{backgroundColor: 'yellow'}}to="/trolls/new">Add a New Troll</NavLink>    
             &nbsp; | &nbsp;
             <span>Welcome, {user.name}</span>
             &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
