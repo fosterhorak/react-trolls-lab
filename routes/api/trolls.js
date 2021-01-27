@@ -7,7 +7,7 @@ const trollsCtrl = require('../../controllers/api/trolls');
 router.get('/', trollsCtrl.index);
 router.post('/', trollsCtrl.create);
 router.get('/:id', trollsCtrl.show);
-// router.put('/:id', ensureLoggedIn, trollsCtrl.update);
+router.put('/:id', trollsCtrl.update);
 // router.delete('/:id', ensureLoggedIn, trollsCtrl.delete);
 
 

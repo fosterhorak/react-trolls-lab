@@ -6,11 +6,10 @@ export default function TrollListItem({ troll }) {
     <div className='TrollListItem panel panel-default'>
       <div className="panel-heading">
         <h3 className='panel-title name'>{troll.name}</h3>
-        <h5 className='panel-title other-info'>
-            Breed: {troll.breed}<br/>
-            Age: {troll.age} <br/> 
-            Temperament: {troll.temperament} 
-        </h5>
+        <span className='panel-title other-info'>
+            Breed: <strong>{troll.breed}</strong><br/>
+            Age: <strong>{troll.age} </strong> <br/> 
+        </span>
       </div>
       <div className='panel-footer TrollListItem-action-panel'>
           <Link to={{
@@ -19,9 +18,13 @@ export default function TrollListItem({ troll }) {
           }} >
            <button>detail</button> 
           </Link>
-          
-          
-          <button>edit</button>
+          <Link to={{
+            pathname: '/edit',
+            state: {troll}
+          }} >
+           <button>edit</button> 
+          </Link>
+
           <button>delete</button>
       </div>
     </div>

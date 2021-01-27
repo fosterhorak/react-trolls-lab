@@ -8,6 +8,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewTrollPage from '../NewTrollPage/NewTrollPage';
 import TrollIndexPage from '../TrollIndexPage/TrollIndexPage';
 import TrollDetailPage from '../TrollDetailPage/TrollDetailPage';
+import EditTrollPage from '../EditTrollPage/EditTrollPage';
 import NavBar from '../../components/NavBar/NavBar';
 import * as trollAPI from '../../utilities/trolls-api';
 
@@ -42,6 +43,15 @@ export default function App() {
     history.push("/")
   }, [trolls, history])
 
+  async function handleUpdateTroll(updatedTrollData) {
+    const updatedTroll = await trollAPI.update(updatedTrollData);
+    const newTrollArray = trolls.map(troll =>
+      troll._id === updatedTroll._id ? updatedTroll : troll
+    );
+    setTrolls(newTrollArray);
+  }
+
+
   return (
     <main className="App">
       { user ? 
@@ -64,6 +74,11 @@ export default function App() {
               <Route exact path="/details">
                 <TrollDetailPage />
               </Route>
+              <Route exact path="/edit">
+                <EditTrollPage handleUpdateTroll={handleUpdateTroll}/>
+              </Route>
+
+
               {/*<Redirect to="/" />*/}
               </Switch>
             </main>

@@ -15,15 +15,15 @@ export function create(troll) {
     }).then(res => res.json());
 }
 
-// export function update(troll) {
-//     return fetch(`${BASE_URL}/${troll._id}`, {
-//         method: "PUT",
-//         headers: {
-//             "content-type": "application/json"
-//         },
-//         body: JSON.stringify(troll)
-//     }).then(res => res.json());
-// }
+export function update(troll) {
+    return fetch(`${BASE_URL}/${troll._id}`, {
+        method: "PUT",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(troll)
+    }).then(res => res.json());
+}
 
 // export function deleteOne(trollID) {
 //     return fetch(`${BASE_URL}/${trollID}`, {
