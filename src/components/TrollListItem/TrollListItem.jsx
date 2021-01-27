@@ -1,6 +1,6 @@
 //import './TrollListItem.css';
 import {Link} from 'react-router-dom';
-export default function TrollListItem({ troll }) {
+export default function TrollListItem({ troll, handleDeleteTroll }) {
 
   return (
     <div className='TrollListItem panel panel-default'>
@@ -25,7 +25,7 @@ export default function TrollListItem({ troll }) {
            <button>edit</button> 
           </Link>
 
-          <button>delete</button>
+          <button onClick={() => handleDeleteTroll(troll._id)}>delete</button>
       </div>
     </div>
   );

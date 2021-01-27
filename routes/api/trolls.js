@@ -8,7 +8,7 @@ router.get('/', trollsCtrl.index);
 router.post('/', trollsCtrl.create);
 router.get('/:id', trollsCtrl.show);
 router.put('/:id', trollsCtrl.update);
-// router.delete('/:id', ensureLoggedIn, trollsCtrl.delete);
+router.delete('/:id', trollsCtrl.delete);
 
 
 module.exports = router;

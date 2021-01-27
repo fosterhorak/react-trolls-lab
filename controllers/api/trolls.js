@@ -5,7 +5,7 @@ module.exports = {
     create,
     show,
     update,
-    //delete: deleteOne
+    delete: deleteOne
 };
 
 
@@ -31,7 +31,7 @@ async function update(req, res) {
     res.status(200).json(updatedTroll);
 }
 
-// async function deleteOne(req, res) {
-//     const deletedTroll = await Troll.findByIdAndRemove(req.params.id);
-//     res.status(200).json(deletedTroll)
-// }
+async function deleteOne(req, res) {
+    const deletedTroll = await Troll.findByIdAndRemove(req.params.id);
+    res.status(200).json(deletedTroll)
+}

@@ -25,11 +25,11 @@ export function update(troll) {
     }).then(res => res.json());
 }
 
-// export function deleteOne(trollID) {
-//     return fetch(`${BASE_URL}/${trollID}`, {
-//         method: "DELETE",
-//         headers: {
-//             "content-type": "application/json",
-//         }
-//     });
-// }
+export function deleteOne(trollID) {
+    return fetch(`${BASE_URL}/${trollID}`, {
+        method: "DELETE",
+        headers: {
+            "content-type": "application/json",
+        }
+    });
+}

@@ -15,6 +15,7 @@ export default function TrollIndexPage( props ) {
                 {props.trolls.map(troll => 
                     <TrollListItem 
                         troll={troll} 
+                        handleDeleteTroll={props.handleDeleteTroll}
                         key={troll._id}
                     />
                 )}

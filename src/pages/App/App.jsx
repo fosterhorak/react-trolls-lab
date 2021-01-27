@@ -51,6 +51,11 @@ export default function App() {
     setTrolls(newTrollArray);
   }
 
+  async function handleDeleteTroll(trollID) {
+    await trollAPI.deleteOne(trollID);
+    setTrolls(trolls.filter(troll => troll._id !== trollID));
+  }
+
 
   return (
     <main className="App">
@@ -69,7 +74,7 @@ export default function App() {
                 <NewTrollPage trolls={trolls} setTrolls={setTrolls} handleAddTroll={handleAddTroll} /> 
               </Route>
               <Route exact path="/">
-                <TrollIndexPage trolls={trolls} setTrolls={setTrolls} /> 
+                <TrollIndexPage trolls={trolls} setTrolls={setTrolls} handleDeleteTroll={handleDeleteTroll}/> 
               </Route>
               <Route exact path="/details">
                 <TrollDetailPage />
