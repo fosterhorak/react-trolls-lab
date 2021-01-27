@@ -3,7 +3,7 @@ const Troll = require('../../models/troll');
 module.exports = {
     index,
     create,
-    //show,
+    show,
     //update,
     //delete: deleteOne
 };
@@ -19,10 +19,10 @@ async function create(req, res) {
     res.status(201).json(troll);
 }
 
-// async function show(req, res) {
-//     const troll = await Troll.findById(req.params.id);
-//     res.status(200).json(troll);
-// }
+async function show(req, res) {
+    const troll = await Troll.findById(req.params.id);
+    res.status(200).json(troll);
+}
 
 // async function update(req, res) {
 //     const updatedTroll = await Troll.findByIdAndUpdate(req.params.id, req.body, {

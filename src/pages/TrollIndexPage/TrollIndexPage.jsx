@@ -1,5 +1,5 @@
 // import * as userService from '../../utilities/users-service';
-import TrollList from '../../components/TrollList/TrollList';
+import TrollListItem from '../../components/TrollListItem/TrollListItem';
 
 export default function TrollIndexPage( props ) {
     
@@ -10,9 +10,15 @@ export default function TrollIndexPage( props ) {
     
     return(
         <>
-            <h1>Troll Index Page</h1>
-            <TrollList trolls={props.trolls}/>
-            {/*<button onClick={handleCheckToken}>Check When My Login Expires</button>*/}
+            <h1>Troll Index Page </h1>
+            <div className='TrollListPage-grid'>
+                {props.trolls.map(troll => 
+                    <TrollListItem 
+                        troll={troll} 
+                        key={troll._id}
+                    />
+                )}
+            </div>
         </>
     );
 }

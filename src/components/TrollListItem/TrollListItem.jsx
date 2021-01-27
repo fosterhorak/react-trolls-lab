@@ -1,5 +1,5 @@
 //import './TrollListItem.css';
-
+import {Link} from 'react-router-dom';
 export default function TrollListItem({ troll }) {
 
   return (
@@ -13,7 +13,14 @@ export default function TrollListItem({ troll }) {
         </h5>
       </div>
       <div className='panel-footer TrollListItem-action-panel'>
-          <button>detail</button>
+          <Link to={{
+            pathname: '/details',
+            state: {troll}
+          }} >
+           <button>detail</button> 
+          </Link>
+          
+          
           <button>edit</button>
           <button>delete</button>
       </div>

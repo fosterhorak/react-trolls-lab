@@ -7,6 +7,7 @@ import AuthPage from '../AuthPage/AuthPage';
 // import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NewTrollPage from '../NewTrollPage/NewTrollPage';
 import TrollIndexPage from '../TrollIndexPage/TrollIndexPage';
+import TrollDetailPage from '../TrollDetailPage/TrollDetailPage';
 import NavBar from '../../components/NavBar/NavBar';
 import * as trollAPI from '../../utilities/trolls-api';
 
@@ -46,21 +47,26 @@ export default function App() {
       { user ? 
           <>
             <NavBar user={user} setUser={setUser}/>
-            <Switch>
+            <main>
+              <Switch>
               {/*<Route path="/orders/new">
                 <NewOrderPage /> 
               </Route>
               <Route path="/orders">
                 <OrderHistoryPage /> 
               </Route> */}
-              <Route path="/new">
+              <Route exact path="/new">
                 <NewTrollPage trolls={trolls} setTrolls={setTrolls} handleAddTroll={handleAddTroll} /> 
               </Route>
-              <Route path="/">
+              <Route exact path="/">
                 <TrollIndexPage trolls={trolls} setTrolls={setTrolls} /> 
               </Route>
-              <Redirect to="/" />
-            </Switch>
+              <Route exact path="/details">
+                <TrollDetailPage />
+              </Route>
+              {/*<Redirect to="/" />*/}
+              </Switch>
+            </main>
           </>
         :
           <AuthPage setUser={setUser}/>
