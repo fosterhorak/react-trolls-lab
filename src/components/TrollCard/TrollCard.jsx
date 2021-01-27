@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function TrollCard({troll}) { 
   return (
-    <div className='panel panel-default'>
+    <div className='panel panel-default troll-card'>
       <div className="panel-heading">
         <h3 className='panel-title'>{troll.name}</h3>
       </div>
